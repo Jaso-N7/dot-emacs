@@ -19,3 +19,6 @@
 		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet"))))
   :config (setq inferior-lisp-program "ccl"))
 
+(use-package material-theme
+  :ensure t
+  :config (load-theme 'material-light t))
