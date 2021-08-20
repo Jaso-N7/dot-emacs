@@ -22,6 +22,12 @@
         '(;; Greek
           ("lambda" . 955) ; λ
 	  ("pi" . 960)
+
+	  ;; Assignment
+	  ("let" . 8792)
+	  ("let*" . 10862)
+	  ("flet" . 8797)
+	  ("defun" . 8614)   ; ↦
 	  
 	  ;; Identity, Equivalence
 	  ("eq" . 8803)
@@ -55,7 +61,7 @@
 	  ("append" . 10756)
 
 	  ;; Maps
-	  ; ("map" . 8614)   ; ↦
+
 	  ("map" . 10204)
 	  ("mapcar" . 8887)
 	  ("maplist" . 8886)
