@@ -28,6 +28,7 @@
 	  ("let*" . 10862)
 	  ("flet" . 8797)
 	  ("defun" . 8614)   ; ↦
+	  ("setf" . 8788)
 	  
 	  ;; Identity, Equivalence
 	  ("eq" . 8803)
