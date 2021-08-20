@@ -8,3 +8,7 @@
 (tool-bar-mode -1)
 (column-number-mode 1)
 (blink-cursor-mode 0)
+
+;; set highlighting brackets
+(show-paren-mode 1)
+(setq show-paren-style 'parenthesis)
