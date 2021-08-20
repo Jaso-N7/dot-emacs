@@ -43,6 +43,7 @@
 	  ("assert" . 8870)
 	  ("and" . 8896)
 	  ("or" . 8897)
+	  ("cond" . 8866)
 
 	  ;; Math Operators
 	  ("/" . 247)
