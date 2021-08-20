@@ -10,3 +10,8 @@
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+(use-package sly
+  :ensure t
+  :config (setq inferior-lisp-program "ccl"))
+
