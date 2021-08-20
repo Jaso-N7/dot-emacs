@@ -6,3 +6,7 @@
 (unless (package-installedp-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
