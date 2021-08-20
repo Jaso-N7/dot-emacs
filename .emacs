@@ -12,3 +12,7 @@
 ;; set highlighting brackets
 (show-paren-mode 1)
 (setq show-paren-style 'parenthesis)
+
+;; display “lambda” as “λ”
+(global-prettify-symbols-mode 1)
+
