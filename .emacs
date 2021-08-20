@@ -19,10 +19,10 @@
 (defun add-prettify-symbols ()
   "make some word or string show as pretty Unicode symbols"
   (setq prettify-symbols-alist
-        '(
+        '(;; Greek
           ("lambda" . 955) ; λ
-	  ("sqrt" . 8730)
-
+	  ("pi" . 960)
+	  
 	  ;; Identity, Equivalence
 	  ("eq" . 8803)
 	  ("eql" . 8801)
@@ -38,9 +38,10 @@
 	  ("and" . 8896)
 	  ("or" . 8897)
 
-	  ;; Operators
+	  ;; Math Operators
 	  ("/" . 247)
 	  ("*" . 215)
+	  ("sqrt" . 8730)
 
 	  ;; Sequences
 	  ("'()" . 8709)
