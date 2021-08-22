@@ -30,4 +30,7 @@
 ;; - LIGHT -
 ;; SOLARIZED
 
-
+(use-package lispy
+  :ensure t
+  :hook (lisp-mode sly-mode)
+  :config (lispy-mode 1))
