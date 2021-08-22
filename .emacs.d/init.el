@@ -32,5 +32,5 @@
 
 (use-package lispy
   :ensure t
-  :hook (lisp-mode sly-mode)
+  :hook lisp-mode 
   :config (lispy-mode 1))
