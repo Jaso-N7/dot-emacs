@@ -27,13 +27,15 @@
 	  ("let" . 8792)
 	  ("let*" . 10862)
 	  ("flet" . 8797)
-	  ("defun" . 8614)   ; ↦
+					;	  ("defun" . 8614)   ; ↦
+	  ("defun" . 10236)
 	  ("setf" . 8788)
 	  
 	  ;; Identity, Equivalence
 	  ("eq" . 8803)
 	  ("eql" . 8801)
 	  ("equal" . 8781)
+	  ("equalp" . 8799)
 
 	  ;; Logic
 	  ("not" . 172)
@@ -61,6 +63,7 @@
 	  ("union" . 8899)
 	  ("intersection" . 8898)
 	  ("append" . 10756)
+	  ("length" . 8594)
 
 	  ;; Maps
 
