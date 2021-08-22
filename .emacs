@@ -20,15 +20,15 @@
   "make some word or string show as pretty Unicode symbols"
   (setq prettify-symbols-alist
         '(;; Greek
-          ("lambda" . 955) ; λ
+          ("lambda" . 955)		; λ
 	  ("pi" . 960)
 
 	  ;; Assignment
 	  ("let" . 8592)
 	  ("let*" . 8594)
 	  ("flet" . 8797)
-					;	  ("defun" . 8614)   ; ↦
-	  ("defun" . 10236)
+	  ("defun" . 8614)		; ↦
+	  ("funcall" . 119891)
 	  ("setf" . 8788)
 	  
 	  ;; Identity, Equivalence
@@ -44,14 +44,15 @@
 	  ("for-all" . 8704)
 	  ("complement" . 8705)
 	  ("assert" . 8870)
-	  ("and" . 8896)
-	  ("or" . 8897)
+	  ("and" . 8743)
+	  ("or" . 8744)
 	  ("cond" . 8866)
 
 	  ;; Math Operators
 	  ("/" . 247)
-	  ("*" . 215)
+	  ("*" . 8901)
 	  ("sqrt" . 8730)
+	  ("exp" . 8337)
 
 	  ;; Sequences
 	  ("'()" . 8709)
@@ -60,13 +61,12 @@
 	  ("member-if-not" . 8716)
 	  ("elt" . 8712)
 	  ("subset" . 8834)
-	  ("union" . 8899)
-	  ("intersection" . 8898)
+	  ("union" . 8746)
+	  ("intersection" . 8745)
 	  ("append" . 10756)
 	  ("length" . 8594)
 
 	  ;; Maps
-
 	  ("map" . 10204)
 	  ("mapcar" . 8887)
 	  ("maplist" . 8886)
