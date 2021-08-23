@@ -13,6 +13,13 @@
 (show-paren-mode 1)
 (setq show-paren-style 'parenthesis)
 
+;; convenient
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; set default font
+(when (member "Anka/Coder" (font-family-list))
+  (set-frame-font "Anka/Coder-12" t t))
+
 ;; display “lambda” as “λ”
 (global-prettify-symbols-mode 1)
 
