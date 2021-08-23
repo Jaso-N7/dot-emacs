@@ -24,12 +24,12 @@
 	  ("pi" . 960)
 
 	  ;; Assignment
-	  ("let" . 8592)
-	  ("let*" . 8594)
+	  ("let" . 8658)                ; ⇒
+	  ("let*" . 8594)               ; →
 	  ("flet" . 8797)
 	  ("defun" . 8614)		; ↦
 	  ("funcall" . 119891)
-	  ("setf" . 8788)
+	  ("setf" . 10566)               ; ⤽ ⥆
 	  
 	  ;; Identity, Equivalence
 	  ("eq" . 8803)
@@ -64,12 +64,12 @@
 	  ("union" . 8746)
 	  ("intersection" . 8745)
 	  ("append" . 10756)
-	  ("length" . 8594)
+	  ("length" . 10230)        ; ≐ ⤍ ⟶ ⇀ ⇥ ⇾
 
 	  ;; Maps
 	  ("map" . 10204)
-	  ("mapcar" . 8887)
-	  ("maplist" . 8886)
+	  ("mapcar" . 8886)
+	  ("maplist" . 8887)
 	  ("mapc" . 8888)
 
 	  ;; Order
