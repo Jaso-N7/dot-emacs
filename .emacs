@@ -18,7 +18,7 @@
 
 ;; set default font
 (when (member "Anka/Coder" (font-family-list))
-  (set-frame-font "Anka/Coder-12" t t))
+  (set-frame-font "Anka/Coder-13" t t))
 
 ;; display “lambda” as “λ”
 (global-prettify-symbols-mode 1)
