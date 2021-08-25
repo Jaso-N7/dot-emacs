@@ -23,37 +23,34 @@
 ;; M-x load-theme 
 ;; OR C-x C-e at the end of the theme settings
 
-(use-package material-theme
-  :ensure t
-  :config (load-theme 'material-light t))
+;(use-package material-theme
+;  :ensure t
+;  :config (load-theme 'material-light t))
 
 ;;; Alternate themes I have enjoyed and will switch to on occasion:
 ;; - DARK -
 ;; NORD - https://github.com/arcticicestudio/nord-emacs
-(use-package nord-theme
-  :ensure nil
-  :config (load-theme 'nord t)
-  :init (setq nord-region-highlight "snowstorm"))
+;(use-package nord-theme
+;  :ensure nil
+;  :config (load-theme 'nord t)
+;  :init (setq nord-region-highlight "snowstorm"))
 
 ;; TRON
-(use-package tron-legacy-theme
-  :ensure nil
-  :config 
-  (setq tron-legacy-theme-vivid-cursor t)
-  (load-theme 'tron-legacy t))
+;(use-package tron-legacy-theme
+;  :ensure nil
+;  :config 
+;  (setq tron-legacy-theme-vivid-cursor t)
+;  (load-theme 'tron-legacy t))
 
 ;; SOLARIZED
-(use-package solarized
-  :ensure nil
+(use-package solarized-theme
+  :ensure t
   :init (setq solarized-high-contrast-mode-line t)
   :config (load-theme 'solarized-dark t))
 
 ;; - LIGHT -
+;; FLATUI
 ;; SOLARIZED
-(use-package solarized
-  :ensure nil
-  :init (setq solarized-high-contrast-mode-line t)
-  :config (load-theme 'solarized-light t))
 
 
 
