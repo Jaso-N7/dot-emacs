@@ -94,5 +94,5 @@
           )))
 
 ;(add-hook 'lisp-mode-hook 'add-prettify-symbols)
-(add-hook 'sly-mode-hook 'add-prettify-symbols)
+(add-hook 'sly-mrepl-mode-hook 'add-prettify-symbols)
 
