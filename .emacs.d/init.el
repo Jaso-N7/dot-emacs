@@ -15,10 +15,10 @@
 (use-package sly
   :ensure t
   ;; Invoke with `M--M-x sly'
-  :init (setq sly-lisp-implementations
+  :init 
+  :config (setq sly-lisp-implementations
 	      '((ccl ("ccl"))
-		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet"))))
-  :config (setq inferior-lisp-program "ccl"))
+		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet")))))
 
 (use-package lispy
   :ensure t
