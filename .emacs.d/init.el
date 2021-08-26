@@ -11,6 +11,7 @@
   :ensure t
   :config (which-key-mode))
 
+;;; LISP
 (use-package sly
   :ensure t
   ;; Invoke with `M--M-x sly'
@@ -18,6 +19,11 @@
 	      '((ccl ("ccl"))
 		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet"))))
   :config (setq inferior-lisp-program "ccl"))
+
+(use-package lispy
+  :ensure t
+  :hook (lisp-mode emacs-mode sly-mrepl-mode)
+  :config (lispy-mode 1))
 
 ;;; THEMES
 ;; M-x load-theme 
@@ -53,8 +59,3 @@
 ;; SOLARIZED
 
 
-
-(use-package lispy
-  :ensure t
-  :hook lisp-mode 
-  :config (lispy-mode 1))
