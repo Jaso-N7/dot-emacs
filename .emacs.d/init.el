@@ -40,7 +40,7 @@
 ;(use-package nord-theme
 ;  :ensure nil
 ;  :config (load-theme 'nord t)
-;  :init (setq nord-region-highlight "snowstorm"))
+;  (setq nord-region-highlight "snowstorm"))
 
 ;; TRON
 ;(use-package tron-legacy-theme
@@ -52,8 +52,9 @@
 ;; SOLARIZED
 (use-package solarized-theme
   :ensure t
-  :init (setq solarized-high-contrast-mode-line t)
-  :config (load-theme 'solarized-dark t))
+  :config
+  (load-theme 'solarized-light t)
+  (setq solarized-high-contrast-mode-line t))
 
 ;; - LIGHT -
 ;; FLATUI
