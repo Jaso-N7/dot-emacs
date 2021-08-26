@@ -22,7 +22,10 @@
 
 (use-package lispy
   :ensure t
-  :hook (lisp-mode emacs-mode sly-mrepl-mode)
+  :hook ((emacs-lisp 
+	  lisp
+	  sly-mrepl)
+	 . lispy-mode)
   :config (lispy-mode 1))
 
 ;;; THEMES
