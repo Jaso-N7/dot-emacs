@@ -15,17 +15,15 @@
 (use-package sly
   :ensure t
   ;; Invoke with `M--M-x sly'
-  :init 
   :config (setq sly-lisp-implementations
 	      '((ccl ("ccl"))
 		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet")))))
 
 (use-package lispy
   :ensure t
-  :hook ((emacs-lisp 
-	  lisp
-	  sly-mrepl)
-	 . lispy-mode)
+  :hook ((emacs-lisp-mode . lispy-mode)
+	 (lisp-mode . lispy-mode)
+	 (sly-mrepl-mode . lispy-mode))
   :config (lispy-mode 1))
 
 ;;; THEMES
