@@ -15,81 +15,6 @@
 
 (package-initialize)
 
-;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; 
-;;                            PACKAGES                               ;;
-;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;;
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(use-package which-key
-  :ensure t
-  :config (which-key-mode))
-
-;;; LISP 
-(use-package sly
-  :ensure t
-  ;; Invoke with `M--M-x sly'
-  :config (setq sly-lisp-implementations
-	      '((ccl ("ccl"))
-		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet")))))
-
-(use-package lispy
-  :ensure t
-  :hook ((emacs-lisp-mode . lispy-mode)
-	 (lisp-mode . lispy-mode)
-	 (sly-mrepl-mode . lispy-mode))
-  :config (lispy-mode 1))
-
-(use-package golden-ratio
-  :ensure t
-  :config (golden-ratio-mode 1))
-
-(use-package web-mode
-  :ensure t
-  :config
-  (add-to-list 'auto-mode-alist '("\\.html?'" . web-mode))
-  (setq web-mode-ac-sources-alist
-	'(("css" . (ac-source-css-property))
-	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
-  (setq web-mode-enable-auto-closing t))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;;;           COLOUR THEMES --- Look and feel of the editor          ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;; M-x load-theme 
-;; OR C-x C-e at the end of the theme settings
-
-					;(use-package material-theme
-					;  :ensure t
-					;  :config (load-theme 'material-light t))
-
-;;; Alternate themes I have enjoyed and will switch to on occasion:
-;; - DARK -
-;; NORD - https://github.com/arcticicestudio/nord-emacs
-					;(use-package nord-theme
-					;  :ensure nil
-					;  :config (load-theme 'nord t)
-					;  (setq nord-region-highlight "snowstorm"))
-
-;; TRON
-					;(use-package tron-legacy-theme
-					;  :ensure nil
-					;  :config 
-					;  (setq tron-legacy-theme-vivid-cursor t)
-					;  (load-theme 'tron-legacy t))
-
-;; SOLARIZED
-(use-package solarized-theme
-  :ensure t
-  :config
-  (load-theme 'solarized-dark t)
-  (setq solarized-high-contrast-mode-line t))
-
-;; - LIGHT -
-;; FLATUI
-;; SOLARIZED
 
 ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; 
 ;;;           GENERAL SETTINGS --- Overall Emacs settings           ;;;
@@ -218,6 +143,84 @@
 (add-hook 'sly-mrepl-mode-hook 'add-prettify-symbols)
 
 ;;; ;;; ;;; ;;; ;;; ;;; END GENERAL SETTINGS ;;; ;;; ;;; ;;; ;;; ;;; 
+
+;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; 
+;;                            PACKAGES                               ;;
+;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;;
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
+;;; LISP 
+(use-package sly
+  :ensure t
+  ;; Invoke with `M--M-x sly'
+  :config (setq sly-lisp-implementations
+	      '((ccl ("ccl"))
+		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet")))))
+
+(use-package lispy
+  :ensure t
+  :hook ((emacs-lisp-mode . lispy-mode)
+	 (lisp-mode . lispy-mode)
+	 (sly-mrepl-mode . lispy-mode))
+  :config (lispy-mode 1))
+
+(use-package golden-ratio
+  :ensure t
+  :config (golden-ratio-mode 1))
+
+(use-package web-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.html?'" . web-mode))
+  (setq web-mode-ac-sources-alist
+	'(("css" . (ac-source-css-property))
+	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+  (setq web-mode-enable-auto-closing t))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;           COLOUR THEMES --- Look and feel of the editor          ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;; M-x load-theme 
+;; OR C-x C-e at the end of the theme settings
+
+					;(use-package material-theme
+					;  :ensure t
+					;  :config (load-theme 'material-light t))
+
+;;; Alternate themes I have enjoyed and will switch to on occasion:
+;; - DARK -
+;; NORD - https://github.com/arcticicestudio/nord-emacs
+					;(use-package nord-theme
+					;  :ensure nil
+					;  :config (load-theme 'nord t)
+					;  (setq nord-region-highlight "snowstorm"))
+
+;; TRON
+					;(use-package tron-legacy-theme
+					;  :ensure nil
+					;  :config 
+					;  (setq tron-legacy-theme-vivid-cursor t)
+					;  (load-theme 'tron-legacy t))
+
+;; SOLARIZED
+(use-package solarized-theme
+  :ensure t
+  :config
+  (load-theme 'solarized-dark t)
+  (setq solarized-high-contrast-mode-line t))
+
+;; - LIGHT -
+;; FLATUI
+;; SOLARIZED
+
+;;; ;;; ;;; ;;; ;;; ;;; ;;; END PACKAGES  ;;; ;;; ;;; ;;; ;;; ;;; 
 
 ;; This allows customizations to be written to the "~/.emacs" file
 (provide '.emacs)
