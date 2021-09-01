@@ -160,9 +160,12 @@
 (use-package sly
   :ensure t
   ;; Invoke with `M--M-x sly'
-  :config (setq sly-lisp-implementations
-	      '((ccl ("ccl"))
-		(cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet")))))
+  :config
+  (setq sly-lisp-implementations
+	'((ccl ("ccl"))
+	  (cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet"))))
+  (eval-after-load 'sly
+    `(define-key sly-prefix-map (kbd "M-h") 'sly-documentation-lookup)))
 
 (use-package lispy
   :ensure t
