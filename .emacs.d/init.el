@@ -149,11 +149,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package which-key
-  :ensure t
-  :config (which-key-mode))
-
-;;; LISP 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;     LISP --- Everything related to Common Lisp Development       ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package sly
   :ensure t
   ;; Invoke with `M--M-x sly'
@@ -171,10 +169,13 @@
 	 (sly-mrepl-mode . lispy-mode))
   :config (lispy-mode 1))
 
-(use-package golden-ratio
+(use-package paren-face
   :ensure t
-  :config (golden-ratio-mode 1))
+  :config (global-paren-face-mode 1))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;            HTML/CSS/JS --- Web Development packages              ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package web-mode
   :ensure t
   :config
@@ -183,6 +184,17 @@
 	'(("css" . (ac-source-css-property))
 	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
   (setq web-mode-enable-auto-closing t))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;        MISC --- Convenience and other personal preferences       ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
+(use-package golden-ratio
+  :ensure t
+  :config (golden-ratio-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;           COLOUR THEMES --- Look and feel of the editor          ;;;
