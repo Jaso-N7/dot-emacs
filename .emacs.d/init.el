@@ -59,6 +59,9 @@
 ;;; Display full path to the file in minibuffer
 (global-set-key (kbd "<f5>") 'show-file-name)
 
+;; Easily move point between windows using Shift+<Arrow Key>
+(windmove-default-keybindings)
+
 ;; Encoding
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
