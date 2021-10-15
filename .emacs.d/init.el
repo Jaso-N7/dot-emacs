@@ -182,10 +182,17 @@
 (use-package web-mode
   :ensure t
   :config
-  (add-to-list 'auto-mode-alist '("\\.html?'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.clp\\'" . web-mode)) ; Common Lisp Server Pages
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode)) ; JavaScript
+  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+  (setq web-mode-engines-alist
+	'(("clp" . "\\.clp\\'")))
   (setq web-mode-ac-sources-alist
 	'(("css" . (ac-source-css-property))
-	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+	  ("js" . (ac-source-css-property))
+	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))
+	  ("clp" . (ac-source-words-in-buffer ac-source-abbrev))))
   (setq web-mode-enable-auto-closing t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
