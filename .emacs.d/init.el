@@ -180,6 +180,9 @@
 (use-package slime-docker
   :custom
   (slime-docker-program "ccl")
+  (slime-docker-ports '((:ip "127.0.0.1"
+			 :host-port 8080
+			 :container-port 8080)))
   (slime-docker-env '(("QUICKLISP_ADD_TO_INIT_FILE" . "true")))
   (slime-docker-mounts `(((,(expand-file-name "c:/Users/Jason.Robinson/quicklisp/local-projects/") . "/home/cl/quicklisp/local-projects/")))))
 
