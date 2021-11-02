@@ -176,6 +176,13 @@
   :ensure t
   :config (global-paren-face-mode 1))
 
+;; Lisp Docker Container Development
+(use-package slime-docker
+  :custom
+  (slime-docker-program "ccl")
+  (slime-docker-env '(("QUICKLISP_ADD_TO_INIT_FILE" . "true")))
+  (slime-docker-mounts `(((,(expand-file-name "c:/Users/Jason.Robinson/quicklisp/local-projects/") . "/home/cl")))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;            HTML/CSS/JS --- Web Development packages              ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -235,7 +242,7 @@
 (use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'solarized-dark t)
+  (load-theme 'solarized-light t)
   (setq solarized-high-contrast-mode-line t))
 
 ;; - LIGHT -
