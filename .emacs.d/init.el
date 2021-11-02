@@ -181,7 +181,7 @@
   :custom
   (slime-docker-program "ccl")
   (slime-docker-env '(("QUICKLISP_ADD_TO_INIT_FILE" . "true")))
-  (slime-docker-mounts `(((,(expand-file-name "c:/Users/Jason.Robinson/quicklisp/local-projects/") . "/home/cl")))))
+  (slime-docker-mounts `(((,(expand-file-name "c:/Users/Jason.Robinson/quicklisp/local-projects/") . "/home/cl/quicklisp/local-projects/")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;            HTML/CSS/JS --- Web Development packages              ;;;
