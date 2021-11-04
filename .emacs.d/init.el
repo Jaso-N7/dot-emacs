@@ -178,13 +178,14 @@
 
 ;; Lisp Docker Container Development
 (use-package slime-docker
+  :ensure t
   :custom
   (slime-docker-program "ccl")
   (slime-docker-ports '((:ip "127.0.0.1"
-			 :host-port 8080
-			 :container-port 8080)))
+			     :host-port 8080
+			     :container-port 8080)))
   (slime-docker-env '(("QUICKLISP_ADD_TO_INIT_FILE" . "true")))
-  (slime-docker-mounts `(((,(expand-file-name "c:/Users/Jason.Robinson/quicklisp/local-projects/") . "/home/cl/quicklisp/local-projects/")))))
+  (slime-docker-mounts `(((,(expand-file-name "~/src/") . "/home/cl/quicklisp/local-projects/")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;            HTML/CSS/JS --- Web Development packages              ;;;
@@ -242,11 +243,11 @@
 					;  (load-theme 'tron-legacy t))
 
 ;; SOLARIZED
-(use-package solarized-theme
-  :ensure t
-  :config
-  (load-theme 'solarized-light t)
-  (setq solarized-high-contrast-mode-line t))
+;(use-package solarized-theme
+;  :ensure t
+;  :config
+;  (load-theme 'solarized-light t)
+;  (setq solarized-high-contrast-mode-line t))
 
 ;; - LIGHT -
 ;; FLATUI
