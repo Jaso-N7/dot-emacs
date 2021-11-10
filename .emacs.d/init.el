@@ -37,7 +37,7 @@
 
 ;; set default font
 (when (member "Anka/Coder" (font-family-list))
-  (set-frame-font "Anka/Coder-13" t t))
+  (set-frame-font "Anka/Coder-14" t t))
 
 ;; Turn off Line Wrap
 (set-default 'truncate-lines nil)
@@ -47,7 +47,7 @@
 ;; Display time
 (display-time)
 ;; Always answer 'y' or 'n'
-(fset 'yes-or-no-p 'y-or-no-p)
+;; (fset 'yes-or-no-p 'y-or-no-p)
 ;; Save backups to a central directory
 (setq backup-directory-alist `(("." . "~/.emacs.saves")))
 
@@ -194,6 +194,7 @@
   :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.ctml\\'" . web-mode)) ; CLIP - An HTML templating engine using Plump.
   (add-to-list 'auto-mode-alist '("\\.clp\\'" . web-mode)) ; Common Lisp Server Pages
   (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode)) ; JavaScript
   (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
@@ -223,9 +224,7 @@
 ;; M-x load-theme 
 ;; OR C-x C-e at the end of the theme settings
 
-(use-package material-theme
- :ensure t
- :config (load-theme 'material-light t))
+
 
 ;;; Alternate themes I have enjoyed and will switch to on occasion:
 ;; - DARK -
@@ -251,7 +250,13 @@
 
 ;; - LIGHT -
 ;; FLATUI
+
 ;; SOLARIZED
+
+;; MATERIAL-LIGHT
+;; (use-package material-theme
+;;  :ensure t
+;;  :config (load-theme 'material-light t))
 
 ;;; ;;; ;;; ;;; ;;; ;;; ;;; END PACKAGES  ;;; ;;; ;;; ;;; ;;; ;;; 
 
