@@ -191,11 +191,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package web-mode
   :ensure t
+  :mode "\\.html?\\'" "\\.js\\'" "\\.css\\'"
+  "\\.clp\\'"				; Common Lisp Server Pages
   :config
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.clp\\'" . web-mode)) ; Common Lisp Server Pages
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode)) ; JavaScript
-  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
   (setq web-mode-engines-alist
 	'(("clp" . "\\.clp\\'")))
   (setq web-mode-ac-sources-alist
