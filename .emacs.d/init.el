@@ -193,15 +193,14 @@
   :ensure t
   :mode "\\.html?\\'" "\\.js\\'" "\\.css\\'"
   "\\.clp\\'"				; Common Lisp Server Pages
-  :config
-  (setq web-mode-engines-alist
-	'(("clp" . "\\.clp\\'")))
-  (setq web-mode-ac-sources-alist
+  :custom
+  (web-mode-engines-alist '(("clp" . "\\.clp\\'")))
+  (web-mode-ac-sources-alist
 	'(("css" . (ac-source-css-property))
 	  ("js" . (ac-source-css-property))
 	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))
 	  ("clp" . (ac-source-words-in-buffer ac-source-abbrev))))
-  (setq web-mode-enable-auto-closing t))
+  (web-mode-enable-auto-closing t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;        MISC --- Convenience and other personal preferences       ;;;
