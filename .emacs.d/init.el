@@ -157,13 +157,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package sly
   :ensure t
-  :custom
-  (sly-lisp-implementations
-   '((ccl ("wx86cl64"))
-     (cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet")))
-   "Invoke with `M--M-x sly'")
-  :bind (:map sly-prefix-map
-	      ("M-h" . sly-documentation-lookup)))
+  :config 				; "Invoke with `M--M-x sly'"
+  (setq sly-lisp-implementations
+	'((ccl ("wx86cl64"))
+	  (cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet"))))
+  :commands sly-prefix-map
+  :bind ("M-h" . sly-documentation-lookup))
 
 (use-package lispy
   :ensure t
