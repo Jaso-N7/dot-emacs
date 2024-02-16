@@ -11,7 +11,8 @@
 ;;                        PACKAGE MANAGERS                           ;;
 ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;;
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+	     '("melpa-stable" . "https://melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -153,6 +154,19 @@
   (package-install 'use-package))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;     CLOJURE --- Everything related to Lisp Development       ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package clojure-mode :ensure t :pin melpa-stable
+  :config (use-package cider :pin melpa-stable
+	    :ensure t
+	    :defer t
+	    :hook ((cider-repl-mode
+		    cider-mode)
+		   . company-mode)
+	    :config (setq cider-repl-use-pretty-printing t)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;     LISP --- Everything related to Common Lisp Development       ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package sly
@@ -164,11 +178,15 @@
   :commands sly-prefix-map
   :bind ("M-h" . sly-documentation-lookup))
 
-(use-package lispy
+(use-package lispy :pin melpa-stable
   :ensure t
-  :hook ((emacs-lisp-mode . lispy-mode)
-	 (lisp-mode . lispy-mode)
-	 (sly-mrepl-mode . lispy-mode))
+  :init (setq lispy-compat '(cider))
+  :hook ((emacs-lisp-mode
+	  lisp-mode
+	  sly-mrepl-mode
+	  clojure-mode
+	  cider-repl-mode)
+	 . lispy-mode)
   :config (lispy-mode 1))
 
 (use-package paren-face
@@ -213,11 +231,24 @@
   :ensure t
   :config (golden-ratio-mode 1))
 
+(use-package company :pin melpa-stable
+  :ensure t
+  :config (global-company-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;           COLOUR THEMES --- Look and feel of the editor          ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;; M-x load-theme 
 ;; OR C-x C-e at the end of the theme settings
+
+;; NANO
+(use-package nano-theme
+  :ensure t
+  :config
+  (setq nano-font-family-monospaced "Roboto Mono")
+  (setq nano-font-family-proportional nil)
+  (setq nano-font-size 16)
+  (load-theme 'nano-light t))
 
 ;(use-package material-theme
 ;  :ensure t
@@ -226,28 +257,28 @@
 ;;; Alternate themes I have enjoyed and will switch to on occasion:
 ;; - DARK -
 ;; NORD - https://github.com/arcticicestudio/nord-emacs
-;(use-package nord-theme
-;  :ensure nil
-;  :config (load-theme 'nord t)
-;  :custom
-;  (nord-region-highlight "snowstorm"))
+					;(use-package nord-theme
+					;  :ensure nil
+					;  :config (load-theme 'nord t)
+					;  :custom
+					;  (nord-region-highlight "snowstorm"))
 
 ;; TRON
-;(use-package tron-legacy-theme
-;  :ensure nil
-;  :config 
-;  (load-theme 'tron-legacy t)
-;  :custom
-;  ( tron-legacy-theme-vivid-cursor t))
+					;(use-package tron-legacy-theme
+					;  :ensure nil
+					;  :config 
+					;  (load-theme 'tron-legacy t)
+					;  :custom
+					;  ( tron-legacy-theme-vivid-cursor t))
 
 
 ;; SOLARIZED
-;(use-package solarized-theme
-;  :ensure t
-;  :config
-;  (load-theme 'solarized-light t)
-;  :custom
-;  (solarized-high-contrast-mode-line t))
+					;(use-package solarized-theme
+					;  :ensure t
+					;  :config
+					;  (load-theme 'solarized-light t)
+					;  :custom
+					;  (solarized-high-contrast-mode-line t))
 
 ;; - LIGHT -
 ;; FLATUI
