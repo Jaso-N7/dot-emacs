@@ -47,8 +47,6 @@
 (setq visible-bell t)
 ;; Display time
 (display-time)
-;; Always answer 'y' or 'n'
-(fset 'yes-or-no-p 'y-or-no-p)
 ;; Save backups to a central directory
 (setq backup-directory-alist `(("." . "~/.emacs.saves")))
 
