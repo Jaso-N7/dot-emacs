@@ -56,7 +56,11 @@
 
 ;;; XAH FLY KEYS ---
 
+;; put this BEFORE loading Xah Fly Keys
+(setq xah-fly-use-meta-key nil)
+
 (require 'xah-fly-keys)
+
 ;; specify a layout
 (xah-fly-keys-set-layout "programer-dvorak")
 ;; make esc key do cancel. works only in gui emacs
