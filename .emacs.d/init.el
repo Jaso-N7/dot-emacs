@@ -79,6 +79,8 @@
       ;; create a keymap
       (define-prefix-command 'xah-clojure-leader-map)
       ;; add keys to it
+      (define-key xah-clojure-leader-map (kbd "e")
+	'cider-eval-last-sexp)
       (define-key xah-clojure-leader-map (kbd "k")
 	'cider-load-buffer-and-switch-to-repl-buffer)
       (define-key xah-clojure-leader-map (kbd "q")
