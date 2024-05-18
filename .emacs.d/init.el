@@ -67,16 +67,16 @@
 ;; create a new layout
 ;; qwerty with r and t swapped
 (puthash "3l" "
-~ 1 2 3 4 5 6 7 8 9 0 8 `
-$ 1 2 3 4 5 6 7 8 9 0 ! # 
+_ 1 2 3 4 5 6 7 8 9 0 _ _
+_ 1 2 3 4 5 6 7 8 9 0 _ _ 
 
-q f u y z x k c w b = & \\
-o h e a i d r t n s :
-, m . j ; g l p v @
+q f u y z x k c w b _ _ \\
+o h e a i d r t n s _
+, m . j ; g l p v _
 
-Q F U Y Z X K C W B > = &
-O H E A I D R T N S :
-, M . J ; G L P V @
+Q F U Y Z X K C W B _ _ _
+O H E A I D R T N S _
+, M . J ; G L P V _
 " xah-fly-layout-diagrams)
 
 ;; this code can test if u got an error in your diagram
