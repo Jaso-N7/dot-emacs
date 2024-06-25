@@ -65,7 +65,6 @@
 ;; in a position after loading xah-fly-keys
 
 ;; create a new layout
-;; qwerty with r and t swapped
 (puthash "3l" "
 _ 1 2 3 4 5 6 7 8 9 0 _ _
 _ 1 2 3 4 5 6 7 8 9 0 _ _ 
