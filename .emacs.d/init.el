@@ -270,16 +270,16 @@ O H E A I D R T N S _
   :config (global-paren-face-mode 1))
 
 ;; Lisp Docker Container Development
-(use-package slime-docker
-  :ensure t
-  :custom
-  (slime-docker-program "ccl")
-  (slime-docker-ports '((:ip "127.0.0.1"
-			     :host-port 8080
-			     :container-port 8080)))
-  (slime-docker-env '(("QUICKLISP_ADD_TO_INIT_FILE" . "true")))
-  (slime-docker-mounts `(((,(expand-file-name "~/src/") . "/home/cl/quicklisp/local-projects/")))))
-
+;; (use-package slime-docker
+  ;; :ensure t
+  ;; :custom
+  ;; (slime-docker-program "ccl")
+  ;; (slime-docker-ports '((:ip "127.0.0.1"
+			     ;; :host-port 8080
+			     ;; :container-port 8080)))
+  ;; (slime-docker-env '(("QUICKLISP_ADD_TO_INIT_FILE" . "true")))
+  ;; (slime-docker-mounts `(((,(expand-file-name "~/src/") . "/home/cl/quicklisp/local-projects/")))))
+  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;            HTML/CSS/JS --- Web Development packages              ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
