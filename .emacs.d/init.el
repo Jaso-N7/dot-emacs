@@ -85,7 +85,7 @@ O H E A I D R T N S _
 
 ;; specify a layout
 ;; (xah-fly-keys-set-layout "programer-dvorak")
-(xah-fly-keys-set-layout "3l")
+(xah-fly-keys-set-layout "koy")
 
 ;; make esc key do cancel. works only in gui emacs
 (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
