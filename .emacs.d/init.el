@@ -241,11 +241,15 @@ O H E A I D R T N S _
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;     LISP --- Everything related to Common Lisp Development       ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Allegro Integration
+(load "/usr/local/acl110ex/eli/fi-site-init.el")
+
 (use-package sly
   :ensure t
   :config 				; "Invoke with `M--M-x sly'"
   (setq sly-lisp-implementations
-	'((ccl ("wx86cl64"))
+	'((acl ("alisp"))
+	  (ccl ("wx86cl64"))
 	  (cmucl ("/opt/cmucl-20c/bin/lisp" "-quiet"))))
   :commands sly-prefix-map
   :bind ("M-h" . sly-documentation-lookup))
