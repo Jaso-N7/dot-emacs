@@ -221,10 +221,6 @@ O H E A I D R T N S _
 
 ;; Ensure nix-mode is loaded from /etc/nixos/configuration.nix (require 'nix-mode) (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;     CLOJURE --- Everything related to Lisp Development       ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
