@@ -53,47 +53,6 @@
 
 ;;; --- END VISUALS
 
-;;; XAH FLY KEYS ---
-
-(use-package xah-fly-keys
-  ;; put this BEFORE loading Xah Fly Keys
-  :preface (setq xah-fly-use-meta-key nil)
-  :config
-  (xah-fly-keys-set-layout "koy")
-  ;; make esc key do cancel. works only in gui emacs
-  (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))  
-  (setq xah-fly-command-mode-indicator
-	(propertize "⦿" 'face '(:foreground "red")))
-  (xah-fly-keys 1))
-
-;; adding a leader key map to clojure mode
-(when (fboundp 'clojure-mode)
-
-  (defun xah-config-clojure-mode ()
-    "config clojure-mode. Version 2024-04-04"
-   (interactive)
-   (progn
-     ;; create a keymap
-     (define-prefix-command 'xah-clojure-leader-map)
-     ;; add keys to it
-     (define-key xah-clojure-leader-map (kbd "e")
- 	'cider-eval-last-sexp)
-       (define-key xah-clojure-leader-map (kbd "k")
- 	'cider-load-buffer-and-switch-to-repl-buffer)
-       (define-key xah-clojure-leader-map (kbd "q")
- 	'cider-quit)
-       ;; add more of the major mode key/command here
-       )
-     ;; modify the major mode's key map, so that a key becomes your leader key
-     ;; F10 - compile the file
-     ;; C-F10 - specify compiler
-     (define-key clojure-mode-map (kbd "<f6>") xah-clojure-leader-map)
-     ;;
-     )
-
-  (add-hook 'clojure-mode-hook 'xah-config-clojure-mode))
-
-;;; --- END XAH FLY KEY
 
 (defun show-file-name ()
   "Show the full path file name in the minibuffer"
@@ -191,6 +150,43 @@
 ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; 
 ;;                            PACKAGES                               ;;
 ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;;
+
+(use-package xah-fly-keys
+  ;; put this BEFORE loading Xah Fly Keys
+  :preface (setq xah-fly-use-meta-key nil)
+  :config
+  (xah-fly-keys-set-layout "koy")
+  ;; make esc key do cancel. works only in gui emacs
+  (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
+  
+  (setq xah-fly-command-mode-indicator
+	(propertize "⦿" 'face '(:foreground "red")))
+  (xah-fly-keys 1)
+
+  ;; adding a leader key map to clojure mode
+  (when (fboundp 'clojure-mode)
+
+    (defun xah-config-clojure-mode ()
+      "config clojure-mode. Version 2024-04-04"
+      (interactive)
+      (progn
+	;; create a keymap
+	(define-prefix-command 'xah-clojure-leader-map)
+	;; add keys to it
+	(define-key xah-clojure-leader-map (kbd "e")
+ 		    'cider-eval-last-sexp)
+	(define-key xah-clojure-leader-map (kbd "k")
+ 		    'cider-load-buffer-and-switch-to-repl-buffer)
+	(define-key xah-clojure-leader-map (kbd "q")
+ 		    'cider-quit)
+	;; add more of the major mode key/command here
+	)
+      ;; modify the major mode's key map, so that a key becomes your leader key
+      ;; F10 - compile the file
+      ;; C-F10 - specify compiler
+      (define-key clojure-mode-map (kbd "<f6>") xah-clojure-leader-map))
+
+    (add-hook 'clojure-mode-hook 'xah-config-clojure-mode)))
 
 (use-package nix-mode
   :disabled t
