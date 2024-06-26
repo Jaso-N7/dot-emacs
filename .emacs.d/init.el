@@ -55,43 +55,16 @@
 
 ;;; XAH FLY KEYS ---
 
-;; put this BEFORE loading Xah Fly Keys
-(setq xah-fly-use-meta-key nil)
-
-(require 'xah-fly-keys)
-
-;; creating a new layout
-;; put this in your emacs init.
-;; in a position after loading xah-fly-keys
-
-;; create a new layout
-(puthash "3l" "
-_ 1 2 3 4 5 6 7 8 9 0 _ _
-_ 1 2 3 4 5 6 7 8 9 0 _ _ 
-
-q f u y z x k c w b _ _ \\
-o h e a i d r t n s _
-, m . j ; g l p v _
-
-Q F U Y Z X K C W B _ _ _
-O H E A I D R T N S _
-, M . J ; G L P V _
-" xah-fly-layout-diagrams)
-
-;; this code can test if u got an error in your diagram
-;(xah-fly-create-key-conv-table
-;  (gethash "qwerty" xah-fly-layout-diagrams)
-;  (gethash "3l" xah-fly-layout-diagrams))
-
-;; specify a layout
-;; (xah-fly-keys-set-layout "programer-dvorak")
-(xah-fly-keys-set-layout "koy")
-
-;; make esc key do cancel. works only in gui emacs
-(define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
- (setq xah-fly-command-mode-indicator
-  (propertize "⦿" 'face '(:foreground "red")))
- (xah-fly-keys 1)
+(use-package xah-fly-keys
+  ;; put this BEFORE loading Xah Fly Keys
+  :preface (setq xah-fly-use-meta-key nil)
+  :config
+  (xah-fly-keys-set-layout "koy")
+  ;; make esc key do cancel. works only in gui emacs
+  (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))  
+  (setq xah-fly-command-mode-indicator
+	(propertize "⦿" 'face '(:foreground "red")))
+  (xah-fly-keys 1))
 
 ;; adding a leader key map to clojure mode
 (when (fboundp 'clojure-mode)
@@ -118,7 +91,7 @@ O H E A I D R T N S _
      ;;
      )
 
-   (add-hook 'clojure-mode-hook 'xah-config-clojure-mode))
+  (add-hook 'clojure-mode-hook 'xah-config-clojure-mode))
 
 ;;; --- END XAH FLY KEY
 
