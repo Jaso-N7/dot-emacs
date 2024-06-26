@@ -219,19 +219,19 @@ O H E A I D R T N S _
 ;;                            PACKAGES                               ;;
 ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;;
 
-(use-package 'nix-mode
+(use-package nix-mode
   :disabled t
-  :mode (("\\.nix\\" . nix-mode)))
+  :mode "\\.nix\\")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;     CLOJURE --- Everything related to Lisp Development       ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package clojure-mode :ensure t :pin melpa-stable
-  :config (use-package cider :pin melpa-stable
+(use-package clojure-mode :defer t  ;; :pin melpa-stable
+  :config (use-package cider  ;; :pin melpa-stable
 	    :ensure t
 	    :defer t
-	    :hook ((cider-repl-mode
+	    :hook  ((cider-repl-mode
 		    cider-mode)
 		   . company-mode)
 	    :config (setq cider-repl-use-pretty-printing t)))
