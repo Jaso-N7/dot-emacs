@@ -152,17 +152,15 @@
 ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;; ;;;
 
 (use-package xah-fly-keys
-  ;; put this BEFORE loading Xah Fly Keys
   :preface (setq xah-fly-use-meta-key nil)
+  :custom (xah-fly-command-mode-indicator
+	   (propertize " ⦿ " 'face '(:foreground "red")))
   :config
   (xah-fly-keys-set-layout "koy")
   ;; make esc key do cancel. works only in gui emacs
   (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
   
-  (setq xah-fly-command-mode-indicator
-	(propertize "⦿" 'face '(:foreground "red")))
   (xah-fly-keys 1)
-
   ;; adding a leader key map to clojure mode
   (when (fboundp 'clojure-mode)
 
