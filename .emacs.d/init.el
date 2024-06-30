@@ -207,7 +207,7 @@
 ;;;     LISP --- Everything related to Common Lisp Development       ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Allegro Integration
-(load "/usr/local/acl110ex/eli/fi-site-init.el")
+(load "/usr/local/acl/eli/fi-site-init.el")
 
 (use-package sly
   :ensure t
