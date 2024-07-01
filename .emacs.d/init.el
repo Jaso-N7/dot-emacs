@@ -53,7 +53,6 @@
 
 ;;; --- END VISUALS
 
-
 (defun show-file-name ()
   "Show the full path file name in the minibuffer"
   (interactive)
