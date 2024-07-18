@@ -38,8 +38,8 @@
        (setq show-paren-style 'parenthesis))
 
 ;; set default font
-(when (member "Anka/Coder" (font-family-list))
-  (set-frame-font "Anka/Coder-13" t t))
+(when (member "IBM Plex Mono" (font-family-list))
+  (set-frame-font "IBM Plex Mono-13" t t))
 
 ;; Turn off Line Wrap
 (set-default 'truncate-lines nil)
