@@ -189,29 +189,17 @@
   :disabled t
   :mode "\\.nix\\")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;;;     ERLANG --- Erlang/OTP & LFE Development                  ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq load-path (cons "/usr/local/lib/erlang/lib/tools-3.5.3/emacs" load-path))
-(setq erlang-root-dir "/usr/local/lib/erlang")
-(setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
-(require 'erlang-start)
-(require 'erlang-flymake)
-
-;; LFE-MODE : Install from MELPA 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;     CLOJURE --- Everything related to Lisp Development       ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package clojure-mode :defer t ;; :pin melpa-stable
-  :config (use-package cider	   ;; :pin melpa-stable
+(use-package clojure-mode :defer t  ;; :pin melpa-stable
+  :config (use-package cider  ;; :pin melpa-stable
 	    :ensure t
 	    :defer t
 	    :hook  ((cider-repl-mode
-		     cider-mode)
-		    . company-mode)
+		    cider-mode)
+		   . company-mode)
 	    :config (setq cider-repl-use-pretty-printing t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
@@ -236,7 +224,6 @@
   :init (setq lispy-compat '(cider))
   :hook ((emacs-lisp-mode
 	  lisp-mode
-	  lfe-mode
 	  sly-mrepl-mode
 	  clojure-mode
 	  cider-repl-mode)
