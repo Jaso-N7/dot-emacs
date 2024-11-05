@@ -32,6 +32,8 @@
 (tool-bar-mode -1)
 (column-number-mode 1)
 (blink-cursor-mode 0)
+ ;; Who uses the bar to scroll?
+ (scroll-bar-mode 0)
 
 ;; set highlighting brackets
 (progn (show-paren-mode 1)
