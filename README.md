@@ -1,3 +1,5 @@
+Repo moved to [Darcs Hub](https://hub.darcs.net/rightminded/emacs)
+
 # .Emacs
 
 Personal `.emacs` configuration, mostly system agnostic. Since I rarely use Windows for development, this is mainly biased towards a Unix Programming Environment.
